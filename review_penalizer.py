@@ -9,7 +9,11 @@ def review_penalizer(df, save = False):
     point deduction of 0.1. '''
 
     df = df.sort_values(by = 'rank', ascending = True)
-    top_20 = df.iloc[0:20]
+
+    if df.shape[0] > 20:
+        top_20 = df.iloc[0:20]
+    else:
+        top_20 = df
     max_rating = max(top_20.ratingNumber)
 
     df['pen_rating'] = df.apply(lambda row:
