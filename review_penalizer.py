@@ -1,5 +1,6 @@
 import numpy as np
 import math
+import datetime
 
 def review_penalizer(df, save = False):
     '''Compare every movie’s number of reviews to the
@@ -25,6 +26,9 @@ def review_penalizer(df, save = False):
     df = df.sort_values(by = 'pen_rating', ascending = False)
 
     if save:
-        df.to_excel('imdb_top_' + str(len(df.pen_rating)) + 'review_penalized.xlsx')
+        today = datetime.date.today()
+        now = datetime.datetime.now()
+        df.to_excel('imdb_top_' + str(len(df.pen_rating)) + 'review_penalized' +
+                    str(today.strftime('%b_%d_%Y')) + '_' + str(now.strftime("%H_%M_%S")) + '.xlsx')
 
     return df

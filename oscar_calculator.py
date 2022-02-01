@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import datetime
 
 def oscar_calculator(df, save = False):
     '''increases the imdb score with:
@@ -19,6 +19,9 @@ def oscar_calculator(df, save = False):
 
     df = df.sort_values(by = 'oscar_rating', ascending = False)
     if save:
-        df.to_excel('imdb_top_' + str(len(df.oscar_rating)) + 'oscar_adjusted.xlsx')
+        today = datetime.date.today()
+        now = datetime.datetime.now()
+        df.to_excel('imdb_top_' + str(len(df.oscar_rating)) + 'oscar_adjusted' +
+                    str(today.strftime('%b_%d_%Y')) + '_' + str(now.strftime("%H_%M_%S")) + '.xlsx')
 
     return df
