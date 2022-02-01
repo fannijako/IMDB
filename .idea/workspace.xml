@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="get_film_attributes function for the top n films in the IMDB chart">
+    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="scraper function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
     </list>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643727945061</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="scraper function">
+      <created>1643728381901</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643728381901</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +162,7 @@
     <MESSAGE value="oscar_number_scraper function" />
     <MESSAGE value="oscar_number_scraper function changes&#10;empty soup problems" />
     <MESSAGE value="get_film_attributes function for the top n films in the IMDB chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="get_film_attributes function for the top n films in the IMDB chart" />
+    <MESSAGE value="scraper function" />
+    <option name="LAST_COMMIT_MESSAGE" value="scraper function" />
   </component>
 </project>
