@@ -14,10 +14,10 @@ test_df_2 = {'title': ['A remény rabjai', 'A keresztapa'],
              'Oscar': [0, 3],
              'rank': [1, 2],
              'pen_rating': [9.3, 8.5]}
-test_df_2 = pd.DataFrame(test_df_2)
+test_df_2 = pd.DataFrame(test_df_2, index = [0, 1])
 
-class TestScraper(unittest.TestCase):
-    def test_scraper(self):
+class TestReview_Penalizer(unittest.TestCase):
+    def test_review_penalizer(self):
         from review_penalizer import review_penalizer
         self.assertEqual(review_penalizer(test_df), test_df_2)
 
