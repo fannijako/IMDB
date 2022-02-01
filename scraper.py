@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
 import random
-import pandas as pd
 import datetime
 
 def get_links(url, tag):
