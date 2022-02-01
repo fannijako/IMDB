@@ -24,7 +24,3 @@ def review_penalizer(df, save = False):
         df.to_excel('imdb_top_' + str(len(df.pen_rating)) + 'review_penalized.xlsx')
 
     return df
-
-df = scraper(20)
-df = review_penalizer(df)
-print(df)

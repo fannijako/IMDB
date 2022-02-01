@@ -1,4 +1,4 @@
-def print_rating_df(index_range, sort_by = 'rank', ascending = True, return_b=False):
+def print_rating_df(index_range, sort_by = 'rank', ascending = True, return_b = False):
     '''scrape the top n movie
     and calculate the review penalizer
     as well as the oscar calculator'''
