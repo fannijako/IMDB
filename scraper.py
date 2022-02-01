@@ -31,9 +31,10 @@ def unique_list(link_list):
 
 link_list = unique_list(link_list)
 
-def create_soup(url, sub_1):
-    '''creating a html soup from a html sites subsite'''
-    link = url + sub_1
+def create_soup(url, sub_1, sub_2 = ''):
+    '''creating a html soup from a html sites subsite or subsites'''
+
+    link = url + sub_1 + sub_2
     html_page = urlopen(link)
     soup = BeautifulSoup(html_page)
 
@@ -61,4 +62,3 @@ def aggregate_rating_scraper(soup):
 
 # test the first film from the top250 list
 aggregateRating = aggregate_rating_scraper(soup)
-print(aggregateRating)
