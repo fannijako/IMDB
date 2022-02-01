@@ -1,7 +1,9 @@
+import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
 import random
+import pandas as pd
 
 def get_links(url, tag):
     '''get all links from a html webpage (url)
@@ -113,7 +115,7 @@ def oscar_number_scraper(soup):
 
     Oscar = Oscar.split()
     if Oscar[0] == 'Won' and (Oscar[2] == 'Oscar' or Oscar[2] == 'Oscars'):
-        return (int(Oscar[1]))
+        return int(Oscar[1])
     else:
         return 0
 
@@ -121,3 +123,35 @@ def oscar_number_scraper(soup):
 Oscar = oscar_number_scraper(soup)
 print('Number of Oscars')
 print(Oscar)
+
+def get_film_attributes(index_range, link_list):
+    '''scrape the 4 attributes (title, aggregate Rating, rating Number, Oscar)
+    for the first n (index_range) films from the link_list list - the top n
+    films in the IMDB chart'''
+
+    title_list = []
+    aggregateRating_list = []
+    ratingNumber_list = []
+    Oscar_list = []
+
+    for index in range(index_range):
+
+        main_soup = create_soup('https://imdb.com', link_list[index])
+        sub_soup = create_soup('https://imdb.com', link_list[index], 'ratings')
+
+        title_list.append(title_scraper(main_soup))
+        aggregateRating_list.append(aggregate_rating_scraper(main_soup))
+        ratingNumber_list.append(rating_number_scraper(sub_soup))
+        Oscar_list.append(oscar_number_scraper(main_soup))
+
+    df = {'title': title_list,
+          'aggregateRating': aggregateRating_list,
+          'ratingNumber': ratingNumber_list,
+          'Oscar': Oscar_list,
+          'rank': range(1, index_range + 1)}
+    df = pd.DataFrame(df)
+
+    return df
+
+df = get_film_attributes(20, link_list)
+print(df)
