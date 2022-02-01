@@ -153,5 +153,19 @@ def get_film_attributes(index_range, link_list):
 
     return df
 
+# scrape the top 20 films
 df = get_film_attributes(20, link_list)
 print(df)
+
+def scraper(index_range, save = False):
+    '''download the link list and the top n film attributes'''
+
+    link_list = get_links('https://www.imdb.com/chart/top/', '^/title')
+    link_list = unique_list(link_list)
+
+    df = get_film_attributes(index_range, link_list)
+
+    if save:
+        df.to_excel('imdb_top_' + str(index_range) + '.xlsx')
+
+    return df
