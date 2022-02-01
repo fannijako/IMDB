@@ -52,6 +52,7 @@ def title_scraper(soup):
 
 # test the first film from the top250 list
 title = title_scraper(soup)
+print(title)
 
 def aggregate_rating_scraper(soup):
     '''get the aggregate rating of the movie from a BeautifulSoup object of an IMDB site'''
@@ -62,6 +63,7 @@ def aggregate_rating_scraper(soup):
 
 # test the first film from the top250 list
 aggregateRating = aggregate_rating_scraper(soup)
+print(aggregateRating)
 
 def rating_number_scraper(soup):
     '''get the number of ratings of the movie from the BeautifulSoup object
@@ -80,3 +82,22 @@ def rating_number_scraper(soup):
 sub_soup = create_soup('https://www.imdb.com', link_list[0], 'ratings')
 ratingNumber = rating_number_scraper(sub_soup)
 print(ratingNumber)
+
+
+def oscar_number_scraper(soup):
+    '''get the number of Oscars of the movie from the BeautifulSoup object
+    of the IMDB site'''
+
+    s_Oscar = soup.findAll('div', attrs={'class': re.compile("Awards__List-sc-152rtbv-1 eKsukd")})
+
+    Oscar = s_Oscar[0].next_sibling.findAll('a')[0].string
+
+    Oscar = Oscar.split()
+    if Oscar[0] == 'Won':
+        return (int(Oscar[1]))
+    else:
+        return (0)
+
+# test with the first film from the top250 list
+Oscar = oscar_number_scraper(soup)
+print(Oscar)
