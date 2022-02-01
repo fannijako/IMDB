@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="scraper function">
-      <change afterPath="$PROJECT_DIR$/review_penalizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
+    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="review_penalizer">
+      <change beforePath="$PROJECT_DIR$/review_penalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/review_penalizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643728482079</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="review_penalizer">
+      <created>1643729172451</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643729172451</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +178,7 @@
     <MESSAGE value="oscar_number_scraper function changes&#10;empty soup problems" />
     <MESSAGE value="get_film_attributes function for the top n films in the IMDB chart" />
     <MESSAGE value="scraper function" />
-    <option name="LAST_COMMIT_MESSAGE" value="scraper function" />
+    <MESSAGE value="review_penalizer" />
+    <option name="LAST_COMMIT_MESSAGE" value="review_penalizer" />
   </component>
 </project>
