@@ -41,7 +41,7 @@ get_links: get all links from an html webpage (url), which starts with a selecte
 
 unique_list: reshape a list of lists to a one-dimensional list with unique values
 
-create_soup: creating an html soup from a html site, subsite or subsites - create BeautifulSoup object for every movie's site from the Top 250 list and its 'ratings' subsite
+create_soup: creating an html soup from an html site, subsite or subsites - create BeautifulSoup object for every movie's site from the Top 250 list and its 'ratings' subsite
 
 title_scraper: get the title of the movie from a BeautifulSoup object of an IMDB site - access the h1 tag from the site with class: TitleHead
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="oscar calculator test">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="top20 print&#10;filename updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oscar_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/oscar_calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_rating_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/print_rating_df.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/review_penalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/review_penalizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
     </list>
@@ -343,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643733586899</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="top20 print&#10;filename updates">
+      <created>1643739095151</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1643739095151</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +380,7 @@
     <MESSAGE value="scraper unit test" />
     <MESSAGE value="review penalizer test" />
     <MESSAGE value="oscar calculator test" />
-    <option name="LAST_COMMIT_MESSAGE" value="oscar calculator test" />
+    <MESSAGE value="top20 print&#10;filename updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="top20 print&#10;filename updates" />
   </component>
 </project>

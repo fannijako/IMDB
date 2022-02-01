@@ -3,11 +3,11 @@ import numpy as np
 import datetime
 
 def oscar_calculator(df, save = False):
-    '''increases the imdb score with:
-    0.3 point if the film won 1 or 2 oscars
-    0.5 point if the film won 3 to 5 oscars
-    1 point if the film won 6 to 10 oscars
-    1.5 point if the film won more than 10 oscars'''
+    '''increases the IMDb score with:
+    0.3 points if the film won 1 or 2 Oscars
+    0.5 points if the film won 3 to 5 Oscars
+    1 point if the film won 6 to 10 Oscars
+    1.5 points if the film won more than 10 Oscars'''
 
     df['oscar_rating'] = df.apply(lambda row:
                                   row.aggregateRating + 1.5 if row.Oscar > 10

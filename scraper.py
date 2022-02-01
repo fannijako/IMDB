@@ -7,8 +7,8 @@ import pandas as pd
 import datetime
 
 def get_links(url, tag):
-    '''get all links from a html webpage (url)
-    wich start with a selected string (tag)'''
+    '''get all links from an html webpage (url)
+    which starts with a selected string (tag)'''
 
     html_page = urlopen(url)
     soup = BeautifulSoup(html_page, features = 'lxml')
@@ -21,7 +21,7 @@ def get_links(url, tag):
     return links
 
 def unique_list(link_list):
-    '''reshaping a list of lists to a 1 dimensional list '''
+    '''reshaping a list of lists to a one-dimensional list with unique values '''
 
     my_list = []
     for i in link_list:
@@ -31,7 +31,7 @@ def unique_list(link_list):
     return my_list
 
 def create_soup(url, sub_1, sub_2 = ''):
-    '''creating a html soup from a html sites subsite or subsites'''
+    '''creating an html soup from an html sites, subsite or subsites'''
 
     link = url + sub_1 + sub_2
     html_page = urlopen(link)
@@ -40,7 +40,7 @@ def create_soup(url, sub_1, sub_2 = ''):
     return soup
 
 def title_scraper(soup):
-    '''get the title of the movie from a BeautifulSoup object of an IMDB site'''
+    '''get the title of the movie from a BeautifulSoup object of an IMDb site'''
 
     s_title = soup.findAll('h1', attrs={'class': re.compile('TitleHead')})
 
@@ -50,7 +50,7 @@ def title_scraper(soup):
     return s_title[0].string
 
 def aggregate_rating_scraper(soup):
-    '''get the aggregate rating of the movie from a BeautifulSoup object of an IMDB site'''
+    '''get the aggregate rating of the movie from a BeautifulSoup object of an IMDb site'''
 
     s_rating = soup.findAll('span', attrs={'class': re.compile('AggregateRating')})
 
@@ -77,7 +77,7 @@ def rating_number_scraper(soup):
 
 def oscar_number_scraper(soup):
     '''get the number of Oscars of the movie from the BeautifulSoup object
-    of the IMDB site'''
+    of the IMDb site'''
 
     s_Oscar = soup.findAll('div', attrs={'class': re.compile("Awards__List-sc-152rtbv-1 eKsukd")})
 
@@ -98,7 +98,7 @@ def oscar_number_scraper(soup):
 def get_film_attributes(index_range, link_list):
     '''scrape the 4 attributes (title, aggregate Rating, rating Number, Oscar)
     for the first n (index_range) films from the link_list list - the top n
-    films in the IMDB chart'''
+    films in the IMDb chart'''
 
     title_list = []
     aggregateRating_list = []
