@@ -20,7 +20,7 @@ def get_links(url, tag):
 link_list = get_links('https://www.imdb.com' + "/chart/top/", '^/title')
 
 def unique_list(link_list):
-    ''' reshaping a list of lists to a 1 dimensional list '''
+    '''reshaping a list of lists to a 1 dimensional list '''
 
     my_list = []
     for i in link_list:
@@ -32,7 +32,7 @@ def unique_list(link_list):
 link_list = unique_list(link_list)
 
 def create_soup(url, sub_1):
-    ''' creating a html soup from a html sites subsite'''
+    '''creating a html soup from a html sites subsite'''
     link = url + sub_1
     html_page = urlopen(link)
     soup = BeautifulSoup(html_page)
@@ -51,3 +51,14 @@ def title_scraper(soup):
 
 # test the first film from the top250 list
 title = title_scraper(soup)
+
+def aggregate_rating_scraper(soup):
+    '''get the aggregate rating of the movie from a BeautifulSoup object of an IMDB site'''
+
+    s_rating = soup.findAll('span', attrs={'class': re.compile('AggregateRating')})
+
+    return float(s_rating[0].string)
+
+# test the first film from the top250 list
+aggregateRating = aggregate_rating_scraper(soup)
+print(aggregateRating)
