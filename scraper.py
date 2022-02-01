@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
+import random
 
 def get_links(url, tag):
     '''get all links from a html webpage (url)
@@ -40,18 +41,23 @@ def create_soup(url, sub_1, sub_2 = ''):
 
     return soup
 
-# test with the first film from the top250 list
-soup = create_soup('https://www.imdb.com', link_list[0])
+# test with one of the films from the top250 list
+random_integer = random.randrange(0, 250)
+soup = create_soup('https://www.imdb.com', link_list[random_integer])
 
 def title_scraper(soup):
     '''get the title of the movie from a BeautifulSoup object of an IMDB site'''
 
     s_title = soup.findAll('h1', attrs={'class': re.compile('TitleHead')})
 
+    if s_title == []:
+        return 0
+
     return s_title[0].string
 
-# test the first film from the top250 list
+# test with one of the films from the top250 list
 title = title_scraper(soup)
+print('title')
 print(title)
 
 def aggregate_rating_scraper(soup):
@@ -59,10 +65,14 @@ def aggregate_rating_scraper(soup):
 
     s_rating = soup.findAll('span', attrs={'class': re.compile('AggregateRating')})
 
+    if s_rating == []:
+        return 0
+
     return float(s_rating[0].string)
 
-# test the first film from the top250 list
+# test with one of the films from the top250 list
 aggregateRating = aggregate_rating_scraper(soup)
+print('IMDB rating')
 print(aggregateRating)
 
 def rating_number_scraper(soup):
@@ -72,17 +82,20 @@ def rating_number_scraper(soup):
 
     s_number = soup.findAll('div', attrs={'class': re.compile('allText')})
 
+    if s_number == []:
+        return 0
+
     s_number = s_number[1].get_text()
     s_number = s_number.splitlines()[1].strip()
     s_number = s_number.replace(',', '')
 
     return int(s_number)
 
-# test with the first film from the top250 list
-sub_soup = create_soup('https://www.imdb.com', link_list[0], 'ratings')
+# test with one of the films from the top250 list
+sub_soup = create_soup('https://www.imdb.com', link_list[random_integer], 'ratings')
 ratingNumber = rating_number_scraper(sub_soup)
+print('Number of ratings')
 print(ratingNumber)
-
 
 def oscar_number_scraper(soup):
     '''get the number of Oscars of the movie from the BeautifulSoup object
@@ -90,14 +103,21 @@ def oscar_number_scraper(soup):
 
     s_Oscar = soup.findAll('div', attrs={'class': re.compile("Awards__List-sc-152rtbv-1 eKsukd")})
 
+    if s_Oscar == []:
+        return 0
+
     Oscar = s_Oscar[0].next_sibling.findAll('a')[0].string
 
+    if Oscar is None:
+        return 0
+
     Oscar = Oscar.split()
-    if Oscar[0] == 'Won':
+    if Oscar[0] == 'Won' and (Oscar[2] == 'Oscar' or Oscar[2] == 'Oscars'):
         return (int(Oscar[1]))
     else:
-        return (0)
+        return 0
 
-# test with the first film from the top250 list
+# test with one of the films from the top250 list
 Oscar = oscar_number_scraper(soup)
+print('Number of Oscars')
 print(Oscar)

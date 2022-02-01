@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="rating_number_scraper function">
+    <list default="true" id="5cfa7891-4202-4865-b3d0-9d5cbc8b6362" name="Changes" comment="oscar_number_scraper function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
     </list>
@@ -110,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643711381403</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="oscar_number_scraper function">
+      <created>1643713560979</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643713560979</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +138,7 @@
     <MESSAGE value="aggregate_rating_scraper function" />
     <MESSAGE value="create_soup function: multiple subsites" />
     <MESSAGE value="rating_number_scraper function" />
-    <option name="LAST_COMMIT_MESSAGE" value="rating_number_scraper function" />
+    <MESSAGE value="oscar_number_scraper function" />
+    <option name="LAST_COMMIT_MESSAGE" value="oscar_number_scraper function" />
   </component>
 </project>
