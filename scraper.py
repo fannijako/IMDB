@@ -20,7 +20,7 @@ def get_links(url, tag):
     return links
 
 # downloading all the links from the IMDB top250 list which start with /title
-link_list = get_links('https://www.imdb.com' + "/chart/top/", '^/title')
+# link_list = get_links('https://www.imdb.com' + "/chart/top/", '^/title')
 
 def unique_list(link_list):
     '''reshaping a list of lists to a 1 dimensional list '''
@@ -32,7 +32,7 @@ def unique_list(link_list):
 
     return my_list
 
-link_list = unique_list(link_list)
+# link_list = unique_list(link_list)
 
 def create_soup(url, sub_1, sub_2 = ''):
     '''creating a html soup from a html sites subsite or subsites'''
@@ -44,8 +44,8 @@ def create_soup(url, sub_1, sub_2 = ''):
     return soup
 
 # test with one of the films from the top250 list
-random_integer = random.randrange(0, 250)
-soup = create_soup('https://www.imdb.com', link_list[random_integer])
+# random_integer = random.randrange(0, 250)
+# soup = create_soup('https://www.imdb.com', link_list[random_integer])
 
 def title_scraper(soup):
     '''get the title of the movie from a BeautifulSoup object of an IMDB site'''
@@ -58,9 +58,9 @@ def title_scraper(soup):
     return s_title[0].string
 
 # test with one of the films from the top250 list
-title = title_scraper(soup)
-print('title')
-print(title)
+# title = title_scraper(soup)
+# print('title')
+# print(title)
 
 def aggregate_rating_scraper(soup):
     '''get the aggregate rating of the movie from a BeautifulSoup object of an IMDB site'''
@@ -73,9 +73,9 @@ def aggregate_rating_scraper(soup):
     return float(s_rating[0].string)
 
 # test with one of the films from the top250 list
-aggregateRating = aggregate_rating_scraper(soup)
-print('IMDB rating')
-print(aggregateRating)
+# aggregateRating = aggregate_rating_scraper(soup)
+# print('IMDB rating')
+# print(aggregateRating)
 
 def rating_number_scraper(soup):
     '''get the number of ratings of the movie from the BeautifulSoup object
@@ -94,10 +94,10 @@ def rating_number_scraper(soup):
     return int(s_number)
 
 # test with one of the films from the top250 list
-sub_soup = create_soup('https://www.imdb.com', link_list[random_integer], 'ratings')
-ratingNumber = rating_number_scraper(sub_soup)
-print('Number of ratings')
-print(ratingNumber)
+# sub_soup = create_soup('https://www.imdb.com', link_list[random_integer], 'ratings')
+# ratingNumber = rating_number_scraper(sub_soup)
+# print('Number of ratings')
+# print(ratingNumber)
 
 def oscar_number_scraper(soup):
     '''get the number of Oscars of the movie from the BeautifulSoup object
@@ -120,9 +120,9 @@ def oscar_number_scraper(soup):
         return 0
 
 # test with one of the films from the top250 list
-Oscar = oscar_number_scraper(soup)
-print('Number of Oscars')
-print(Oscar)
+# Oscar = oscar_number_scraper(soup)
+# print('Number of Oscars')
+# print(Oscar)
 
 def get_film_attributes(index_range, link_list):
     '''scrape the 4 attributes (title, aggregate Rating, rating Number, Oscar)
@@ -167,5 +167,5 @@ def scraper(index_range, save = False):
     return df
 
 # scrape the first 20 film in one function
-df = scraper(20)
-print(df)
+# df = scraper(20)
+# print(df)
