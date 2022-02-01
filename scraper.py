@@ -62,3 +62,21 @@ def aggregate_rating_scraper(soup):
 
 # test the first film from the top250 list
 aggregateRating = aggregate_rating_scraper(soup)
+
+def rating_number_scraper(soup):
+    '''get the number of ratings of the movie from the BeautifulSoup object
+    of the SUBSITE of an IMDB site
+    subsite: https://www.imdb.com/title....../ratings'''
+
+    s_number = soup.findAll('div', attrs={'class': re.compile('allText')})
+
+    s_number = s_number[1].get_text()
+    s_number = s_number.splitlines()[1].strip()
+    s_number = s_number.replace(',', '')
+
+    return int(s_number)
+
+# test with the first film from the top250 list
+sub_soup = create_soup('https://www.imdb.com', link_list[0], 'ratings')
+ratingNumber = rating_number_scraper(sub_soup)
+print(ratingNumber)
